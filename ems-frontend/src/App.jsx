@@ -4,8 +4,8 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import ListEmployee from './components/ListEmployee';
+import AddEmployee from './components/AddEmployee';
 
-// Layout component that wraps all pages
 function Layout() {
   return (
     <>
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/employees",
         element: <ListEmployee />
+      },
+      {
+        path:"/add-employee",
+        element: <AddEmployee />
       }
     ]
   }

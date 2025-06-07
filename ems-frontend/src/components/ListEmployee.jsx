@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Users, Mail, User, Hash, Plus, Search } from 'lucide-react';
 import { listEmployees } from '../services/EmployeeService';
-
+import { useNavigate } from 'react-router';
 const ListEmployee = () => {
     const [employees, setEmployees] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -15,7 +15,11 @@ const ListEmployee = () => {
             });
     }, []);
 
-    // Filter employees based on search term
+    const navigate = useNavigate();
+
+    function addNewEmployee() {
+        navigate('/add-employee/');
+    }
     const filteredEmployees = employees.filter(employee => 
         employee.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
         employee.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -68,7 +72,8 @@ const ListEmployee = () => {
                     </div>
                 </div>
                 <div className="text-end mb-4">
-                    <button className="btn btn-success btn-lg shadow-sm">
+                    <button className="btn btn-success btn-lg shadow-sm"
+                    onClick={addNewEmployee}>
                         <Plus size={20} className="me-2" />
                         Add New Employee
                     </button>
@@ -179,4 +184,4 @@ const ListEmployee = () => {
     )
 }
 
-export default ListEmployee
+export default ListEmployee;

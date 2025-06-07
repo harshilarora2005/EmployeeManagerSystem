@@ -9,7 +9,7 @@ const Home = () => {
 
     const quickActions = [
         { title: 'Display Employees', desc: 'View all employees', icon: Eye, color: 'text-primary', link: '/employees' },
-        { title: 'Create Employee', desc: 'Add new employee', icon: PlusCircle, color: 'text-success', link: '/employees/create' },
+        { title: 'Create Employee', desc: 'Add new employee', icon: PlusCircle, color: 'text-success', link: '/add-employee' },
         { title: 'Update Employee', desc: 'Edit employee details', icon: Edit, color: 'text-warning', link: '/employees/update' },
         { title: 'Delete Employee', desc: 'Remove employee', icon: Trash2, color: 'text-danger', link: '/employees/delete' }
     ];
