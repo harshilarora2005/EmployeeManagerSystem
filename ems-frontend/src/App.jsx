@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import ListEmployee from './components/ListEmployee';
 import AddEmployee from './components/AddEmployee';
+import UpdateEmployee from './components/UpdateEmployee';
 
 function Layout() {
   return (
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path:"/add-employee",
         element: <AddEmployee />
+      },
+      {
+        path:"update-employee/:id",
+        element: <UpdateEmployee />
       }
     ]
   }

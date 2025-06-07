@@ -20,6 +20,9 @@ const ListEmployee = () => {
     function addNewEmployee() {
         navigate('/add-employee/');
     }
+    function editEmployee(employee,id) {
+        navigate(`/update-employee/${id}`, { state: { employee } });
+    }
     const filteredEmployees = employees.filter(employee => 
         employee.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
         employee.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -106,7 +109,8 @@ const ListEmployee = () => {
                                                 <User size={16} className="me-1" />
                                                 View
                                             </button>
-                                            <button className="btn btn-outline-warning btn-sm">
+                                            <button className="btn btn-outline-warning btn-sm"
+                                            onClick={() => editEmployee(employee,employee.id)}>
                                                 Edit
                                             </button>
                                             <button className="btn btn-outline-danger btn-sm">
